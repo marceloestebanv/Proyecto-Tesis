@@ -33,7 +33,7 @@ public class IdDAO {
        FileWriter fichero = null; 
      PrintWriter pw = null; 
      try{
-       fichero = new FileWriter("C:\\Users\\Marcelo Verdugo\\Documents\\NetBeansProjects\\Proyecto\\infoid.txt",true);
+       fichero = new FileWriter("infoid.txt",true);
        pw = new PrintWriter(fichero);
        pw.print(id);
        pw.println("");
@@ -52,7 +52,7 @@ public class IdDAO {
 
 int retorno=0;
  try{  
-BufferedReader bf = new BufferedReader(new FileReader("C:\\Users\\Marcelo Verdugo\\Documents\\NetBeansProjects\\Proyecto\\infoid.txt"));
+BufferedReader bf = new BufferedReader(new FileReader("infoid.txt"));
 
 String temp="";
 String[] lineas;

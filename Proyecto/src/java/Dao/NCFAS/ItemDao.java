@@ -39,8 +39,7 @@ public void obtenerIdNcfas() throws Exception{
         ResultSet rs = null;
         try {
             int retorno ;
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdppf?user=root&password=nbuser");
+            this.Conectar();
             stmt2 = con.createStatement();
             rs = stmt2.executeQuery("SELECT MAX(idncfas) as idncfas from ncfas");
             if (rs.next()) {
@@ -51,9 +50,7 @@ public void obtenerIdNcfas() throws Exception{
             } 
         } catch (SQLException e) {
            
-        } catch (ClassNotFoundException e) {
-            
-        } finally {
+        }  finally {
             try {
                 if (rs != null) {
                     rs.close();
