@@ -14,6 +14,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import Dao.NCFAS.PruebaWekaDao;
+import Dao.NCFAS.PruebaWekaDaoDim3;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,6 +49,16 @@ public class MineriaBean implements Serializable {
     dao = new PruebaWekaDao();
     //OBTENGO LAS REGLAS
     reglasEncontradas=dao.retornarReglas();
+    //LAS ENVÍO A PANTALLA
+    return reglasEncontradas;
+    }
+    
+    public List<String> obtenerDim3() throws Exception{
+        //CREO LA COMUNICACIÓN CON PRUEBAWEKADAO
+    PruebaWekaDaoDim3 dao;
+    dao = new PruebaWekaDaoDim3();
+    //OBTENGO LAS REGLAS
+    reglasEncontradas=dao.retornarReglasDim3();
     //LAS ENVÍO A PANTALLA
     return reglasEncontradas;
     }
