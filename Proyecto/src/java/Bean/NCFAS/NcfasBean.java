@@ -125,7 +125,7 @@ public class NcfasBean {
     try {
             dao = new NcfasDAO();
            dao.ingresarNcafas(nombrefamilia,parteproceso/*,usuario*/);
-           contex.getExternalContext().redirect("/Proyecto/faces/nuevositemsncfas_1.xhtml");
+           contex.getExternalContext().redirect("/Proyecto/faces/NCFASPages/nuevositemsncfas_1.xhtml");
         } catch (Exception e) {
             throw e;
         }

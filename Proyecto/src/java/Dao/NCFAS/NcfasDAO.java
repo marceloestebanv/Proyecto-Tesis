@@ -64,8 +64,7 @@ public class NcfasDAO extends DAO {
 
         try {
             
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ncfas2?user=root&password=nbuser");
+            this.Conectar();
             stmt = con.createStatement();
             rs = stmt.executeQuery("SELECT * FROM ncfas");
 
@@ -79,9 +78,7 @@ public class NcfasDAO extends DAO {
 
         } catch (SQLException e) {
            
-        } catch (ClassNotFoundException e) {
-            
-        } finally {
+        }  finally {
             try {
                 if (rs != null) {
                     rs.close();

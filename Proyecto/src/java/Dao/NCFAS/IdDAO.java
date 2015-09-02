@@ -13,6 +13,8 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.faces.context.FacesContext;
+import javax.servlet.ServletContext;
 
 /**
  *
@@ -49,10 +51,13 @@ public class IdDAO {
 }
    
     public int retornarID() throws DAOException{
+        
+ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
+      String pathArchivos=(String) servletContext.getRealPath("/")+"/archivosVarios/"; // Sustituye "/" por el directorio ej: "/upload"
 
 int retorno=0;
  try{  
-BufferedReader bf = new BufferedReader(new FileReader("infoid.txt"));
+BufferedReader bf = new BufferedReader(new FileReader(pathArchivos+"infoid.txt"));
 
 String temp="";
 String[] lineas;

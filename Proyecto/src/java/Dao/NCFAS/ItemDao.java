@@ -23,12 +23,15 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.faces.context.FacesContext;
+import javax.servlet.ServletContext;
 
 /**
  *
  * @author Marcelo Verdugo
  */
 public class ItemDao extends DAO{
+    private Object servletContext;
     
 
 
@@ -75,6 +78,10 @@ public void obtenerIdNcfas() throws Exception{
  public void ingresarItems1(int valor,int bandera) throws IOException  {
      
     
+     
+      ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
+      String pathArchivos=(String) servletContext.getRealPath("/")+"archivosVarios/"; // Sustituye "/" por el directorio ej: "/upload"
+     
      FileWriter fichero = null; 
      PrintWriter pw = null; 
      System.err.println("llegasos a la dimension 1");
@@ -97,9 +104,9 @@ public void obtenerIdNcfas() throws Exception{
         stmt.setInt(2,retorno);
         stmt.executeUpdate();
         
-        
+    
        // acá escribimos en el archivo de texto lo mismo que escrcibimos en la BD
-fichero = new FileWriter("C:\\Users\\Marcelo Verdugo\\Documents\\NetBeansProjects\\Proyecto\\1-ENTORNO.arff",true); 
+fichero = new FileWriter(pathArchivos+"1-ENTORNO.arff",true); 
 pw = new PrintWriter(fichero);
 
 if(bandera==1){
@@ -107,7 +114,7 @@ if(bandera==1){
     pw.println("");
 }else{
 pw.print(valor+",");
-        System.out.println("biiieennntoo");
+        System.out.println(pathArchivos+"biiieennntoo");
 }
 }
        catch (SQLException sqle) {
@@ -125,7 +132,8 @@ pw.print(valor+",");
  
  public void ingresarItems2(int valor,int bandera) throws IOException  {
      
-    
+    ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
+      String pathArchivos=(String) servletContext.getRealPath("/")+"/archivosVarios/"; // Sustituye "/" por el directorio ej: "/upload"
      FileWriter fichero = null; 
      PrintWriter pw = null; 
      System.err.println("llegasos a la dimension 2");
@@ -150,7 +158,7 @@ pw.print(valor+",");
         
         
        // acá escribimos en el archivo de texto lo mismo que escrcibimos en la BD
-fichero = new FileWriter("C:\\Users\\Marcelo Verdugo\\Documents\\NetBeansProjects\\Proyecto\\2-COMPETENCIAS.arff",true); 
+fichero = new FileWriter(pathArchivos+"2-COMPETENCIAS.arff",true); 
 pw = new PrintWriter(fichero);
 
 if(bandera==1){
@@ -177,6 +185,8 @@ pw.print(valor+",");
  public void ingresarItems3(int valor,int bandera) throws IOException  {
      
     
+     ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
+      String pathArchivos=(String) servletContext.getRealPath("/")+"/archivosVarios/"; // Sustituye "/" por el directorio ej: "/upload"
      FileWriter fichero = null; 
      PrintWriter pw = null; 
      System.err.println("llegasos a la dimension 3");
@@ -201,7 +211,7 @@ pw.print(valor+",");
         
         
        // acá escribimos en el archivo de texto lo mismo que escrcibimos en la BD
-fichero = new FileWriter("C:\\Users\\Marcelo Verdugo\\Documents\\NetBeansProjects\\Proyecto\\3-INTERACCIONES.arff",true); 
+fichero = new FileWriter(pathArchivos+"3-INTERACCIONES.arff",true); 
 pw = new PrintWriter(fichero);
 
 if(bandera==1){
@@ -227,7 +237,8 @@ pw.print(valor+",");
  
  public void ingresarItems4(int valor,int bandera) throws IOException  {
      
-    
+     ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
+      String pathArchivos=(String) servletContext.getRealPath("/")+"/archivosVarios/"; // Sustituye "/" por el directorio ej: "/upload"
      FileWriter fichero = null; 
      PrintWriter pw = null; 
      System.err.println("llegasos a la dimension 4");
@@ -252,7 +263,7 @@ pw.print(valor+",");
         
         
        // acá escribimos en el archivo de texto lo mismo que escrcibimos en la BD
-fichero = new FileWriter("C:\\Users\\Marcelo Verdugo\\Documents\\NetBeansProjects\\Proyecto\\4-SEGURIDAD.arff",true); 
+fichero = new FileWriter(pathArchivos+"4-SEGURIDAD.arff",true); 
 pw = new PrintWriter(fichero);
 
 if(bandera==1){
@@ -279,6 +290,8 @@ pw.print(valor+",");
  public void ingresarItems5(int valor,int bandera) throws IOException  {
      
     
+     ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
+      String pathArchivos=(String) servletContext.getRealPath("/")+"/archivosVarios/"; // Sustituye "/" por el directorio ej: "/upload"
      FileWriter fichero = null; 
      PrintWriter pw = null; 
      System.err.println("llegasos a la dimension 5");
@@ -303,7 +316,7 @@ pw.print(valor+",");
         
         
        // acá escribimos en el archivo de texto lo mismo que escrcibimos en la BD
-fichero = new FileWriter("C:\\Users\\Marcelo Verdugo\\Documents\\NetBeansProjects\\Proyecto\\5-BIENESTAR.arff",true); 
+fichero = new FileWriter(pathArchivos+"5-BIENESTAR.arff",true); 
 pw = new PrintWriter(fichero);
 
 if(bandera==1){
@@ -330,6 +343,8 @@ pw.print(valor+",");
  public void ingresarItems6(int valor,int bandera) throws IOException  {
      
     
+     ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
+      String pathArchivos=(String) servletContext.getRealPath("/")+"/archivosVarios/"; // Sustituye "/" por el directorio ej: "/upload"
      FileWriter fichero = null; 
      PrintWriter pw = null; 
      System.err.println("llegasos a la dimension 6");
@@ -354,7 +369,7 @@ pw.print(valor+",");
         
         
        // acá escribimos en el archivo de texto lo mismo que escrcibimos en la BD
-fichero = new FileWriter("C:\\Users\\Marcelo Verdugo\\Documents\\NetBeansProjects\\Proyecto\\6-VIDASOCIAL.arff",true); 
+fichero = new FileWriter(pathArchivos+"6-VIDASOCIAL.arff",true); 
 pw = new PrintWriter(fichero);
 
 if(bandera==1){
@@ -381,6 +396,8 @@ pw.print(valor+",");
  public void ingresarItems7(int valor,int bandera) throws IOException  {
      
     
+     ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
+      String pathArchivos=(String) servletContext.getRealPath("/")+"/archivosVarios/"; // Sustituye "/" por el directorio ej: "/upload"
      FileWriter fichero = null; 
      PrintWriter pw = null; 
      System.err.println("llegasos a la dimension 7");
@@ -405,7 +422,7 @@ pw.print(valor+",");
         
         
        // acá escribimos en el archivo de texto lo mismo que escrcibimos en la BD
-fichero = new FileWriter("C:\\Users\\Marcelo Verdugo\\Documents\\NetBeansProjects\\Proyecto\\7-AUTONOMIA.arff",true); 
+fichero = new FileWriter(pathArchivos+"7-AUTONOMIA.arff",true); 
 pw = new PrintWriter(fichero);
 
 if(bandera==1){
@@ -432,6 +449,8 @@ pw.print(valor+",");
  public void ingresarItems8(int valor,int bandera) throws IOException  {
      
     
+     ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
+      String pathArchivos=(String) servletContext.getRealPath("/")+"/archivosVarios/"; // Sustituye "/" por el directorio ej: "/upload"
      FileWriter fichero = null; 
      PrintWriter pw = null; 
      System.err.println("llegasos a la dimension 8");
@@ -456,7 +475,7 @@ pw.print(valor+",");
         
         
        // acá escribimos en el archivo de texto lo mismo que escrcibimos en la BD
-fichero = new FileWriter("C:\\Users\\Marcelo Verdugo\\Documents\\NetBeansProjects\\Proyecto\\8-SALUD.arff",true); 
+fichero = new FileWriter(pathArchivos+"8-SALUD.arff",true); 
 pw = new PrintWriter(fichero);
 
 if(bandera==1){
@@ -495,8 +514,7 @@ pw.print(valor+",");
 
         try {
             
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ncfas2?user=root&password=nbuser");
+           this.Conectar();
             stmt = con.createStatement();
             rs = stmt.executeQuery("SELECT * FROM ncfas");
 
@@ -510,9 +528,7 @@ pw.print(valor+",");
 
         } catch (SQLException e) {
            
-        } catch (ClassNotFoundException e) {
-            
-        } finally {
+        }  finally {
             try {
                 if (rs != null) {
                     rs.close();

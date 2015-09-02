@@ -27,6 +27,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.faces.context.FacesContext;
+import javax.servlet.ServletContext;
 
 
 import weka.core.converters.ConverterUtils.DataSource;
@@ -38,20 +40,22 @@ public class PruebaWekaDao {
     
 public List<String> retornarReglas() throws DAOException, IOException, Exception{
     
-  
+  ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
+      String pathArchivos=(String) servletContext.getRealPath("/")+"/archivosVarios/"; // Sustituye "/" por el directorio ej: "/upload"
     FileWriter fichero = null; 
     PrintWriter pw = null; 
-    String dataset="C:\\Users\\Marcelo Verdugo\\Documents\\NetBeansProjects\\Proyecto\\DataSetSimulado.arff";
+    String dataset=pathArchivos+"DataSetSimulado.arff";
     
     int retorno=0;
     List<String> almacenaRetorno = null;
     almacenaRetorno = new ArrayList<String>();
         
-    final String nomFich = "C:\\Users\\Marcelo Verdugo\\Documents\\NetBeansProjects\\Proyecto\\Resultado.txt";  
+    final String nomFich = pathArchivos+"Resultado.txt";  
     Scanner in = null;
     int band=0;
  DataSource source = new DataSource(dataset);
  Apriori model = new Apriori();
+ 
     
  try{
     
@@ -64,7 +68,7 @@ public List<String> retornarReglas() throws DAOException, IOException, Exception
     //FileOutputStream out = new FileOutputStream("test.txt");
     //ObjectOutputStream oout = new ObjectOutputStream(out);
          
-    fichero = new FileWriter("C:\\Users\\Marcelo Verdugo\\Documents\\NetBeansProjects\\Proyecto\\Resultado.txt",true); 
+    fichero = new FileWriter(pathArchivos+"Resultado.txt",true); 
     pw = new PrintWriter(fichero);
     pw.println(model);
     
@@ -75,7 +79,7 @@ public List<String> retornarReglas() throws DAOException, IOException, Exception
     
     
     System.out.println("Ahora vamos a leer los resultados obtenidos por apriori");
-//BufferedReader bf = new BufferedReader(new FileReader("C:\\Users\\Marcelo Verdugo\\Documents\\NetBeansProjects\\Proyecto\\Resultado.txt"));
+//BufferedReader bf = new BufferedReader(new FileReader("Resultado.txt"));
 	// abre el fichero
 	in = new Scanner(new FileReader(nomFich));
 	 
