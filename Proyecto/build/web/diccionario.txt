@@ -1,0 +1,55 @@
+Lamina1
+escenario,2	comida,mesa,plato,cuchillo,cuchara,tenedor,tazon,alimento,porotos,lentejas,arroz,huevos,puré,fideos,humo,niños,niñas,pollo,pollito,gallina,gallo,ave,pajaro
+familia,2	papas,papa,mama,papitos,mamita,papito,abuelitos,abuelos,abuelo,abuela,madre,padre,hijo,hija,tio,tia,primo,prima
+comer,2	preparar,tragar,engullir,devorar,masticar,ingerir,alimentar,desayunar,almorzar,merendar,cenar,consumir,probar,saborear,cocinar,gustar
+repartir,1	dividir,distribuir,asignar,racionar,compartir,dar
+castigo,0	corregir,pena,sanción,penitencia,venganza,condena,sentencia,llorar,desobedecer,problemas,infringir,vulnerar,quebrantar,incumplir,oponerse,retar,gemir,lagrimear,lamentar
+amor,1	compañerismo,fraternidad,hermandad,lealtad,leal,cariño,apego,amistad,devoción,simpatizar,reír
+premio,1	recompensa,corona,homenaje,condecoración,retribución,regocijo,gozo,agrado,placer,contento,complacido,satisfacer,divertido,feliz,alegría,jubilo,dicha
+lamina2
+escenario,2	pareja,cuerda,osos,niños,niñas,osa,oso,mapache,perro,suelo,soga,cordel,correa,cordon,nudo,trencilla,cable,trenza,pita
+familia,2	papas,papa,mama,papitos,mamita,papito,abuelitos,abuelos,abuelo,abuela,madre,padre,hijo,hija,tio,tia,primo,prima
+tirar,2	jalar,participar,secundar,socorrer,alianza,aliar,fomentar
+proteger,1	cuidar,ayudar,cooperar,colaborar,asistir
+temor,0	agresión,dañar,mal,agredir,miedo,culpa,romper,terror,violenciar,horror,pasmo,espanto,cruel,feroz,furia,agresión,brusco,dureza,atropello,violacion,ira,rabia,castigo,morir,pena,arresto,fallecer,agonizar,finar,pelea,tristeza,esconder,perder
+satisfacción,1	ganar,ganador,campeón,triunfo,triunfar,vencer,
+juego,2	diversión,entretenimiento,recreo,distraccion,deporte,pasatiempo,descanso,pelea,combate,contienda,conflicto,disputa,desafío,concurso,certamen,lucha,competencia
+Lamina3
+escenario,2	leon,pelo,barba,palo,pipa,silla,mesa,madera,piso,bastón,trono,sillon,sitial,raton,roedor,rata,gato
+familia,2	papas,papa,mama,papitos,mamita,papito,abuelitos,abuelos,abuelo,abuela,madre,padre,hijo,hija,tio,tia,primo,prima
+viejo,0	impotente,inutil,ineficaz,inepto,incapaz,debil,agotado,anciano,abuelo,vejestorio,decrepito,veterano,maduro,achacoso,longevo,añoso,arcaico,antiguo,fosil,antepasado 
+bondadoso,1	lindo,bello,bonito,precioso,agraciado,guapo,hermoso,elegante,escultura,fino,atractivo,bueno,agradable,simpatico,noble,gentil,generoso,amable,educado,correcto,cortez
+peligroso,0	arriesgar,aventura,expuesto,atreverse,osar,afrontar,animar,determinar,
+poderoso,1	potente,fuerte,enérgico,vigor,fornido,corpulento,
+sumision,0	humildad,obedecer,fidelidad,acatar,someter,rendir,
+autonomía,1	soberanía,libertad,independencia,determinación
+Lamina6
+escenario,2	cueva,gruta,rincon,tierra,oscuridad,oscuro,hojas
+vivienda,2	hogar,guarida,madriguera,casa,casita
+familia,2	papas,papa,mama,papitos,mamita,papito,abuelitos,abuelos,abuelo,abuela,madre,padre,hijo,hija,tio,tia,primo,prima
+amor,1	cariño,abrazo,calor,adorar,querer,apego,afecto,acurrucar,acariciar,caricia,atencion,,roce,cuidar
+dormir,2	descansar,yace,acostar,reposar,soñar,sueños,imaginar,noche
+solo,0	soledad,apartado,aislado,aisladar,separación,abandonar,abandono,solitario,distante,lejano,alejado
+alianza,1	matrimonio,casados,papas,esposos,compromiso,responsabilidad,enamorados,juntos
+Lamina7
+escenario,2	tigre,mono,maleza,selva,arbol,pasto,lianas,palmeras,hojas,salto,dientes,garras,africa 
+familia,2	papa,mama,papito,mamita,tia,abuela,abuelita,tio,abuelo,abuelito,prima,primo,hijo,hija,hermano,hermana
+miedo,0	temor,susto,alarma,asalto,intranquilidad,espanto,horror
+fuerza,1	bacan,garra,potencia,firme,fuerte,tenaz,valiente,musculoso
+comer,0	tragar,engullir,masticar,ingerir,masticar
+atacar,0	golpear,pegar,zumbar,sacudir,asaltar,embestir,arrojarse,lanzarse,destrozar,agredir
+sorpresa,2	asombro,impresion,pasmo,deslumbrante,conmocion,espasmo
+Lamina8
+escenario,2	cafe,te,mono,cuadro,sillon,silla,taza,flores,oreja,ojos,manos
+beber,2	tomar,sorber,ingerir,refresco,absorver,soplar,tragar,agua,copear
+familia,2	mama,papa,mamita,papito,tias,abuelas,abuelos,abuelo,abuela,tios,primos,primas,primo,prima,amigas,señoras,vecinas,vecinos,vecina,vecino,señor,hombre,mujer,hermana,hermano
+echar,0	expulsar,rechazar,alejar,ahuyentar,despachar,desterrar
+mentir,0	inventar,mentir,falso,calumniar,engañar,mentira,fingir
+comunicacion,1	hablar,comunicar,conversar,dialogar,charlar,platicar
+Lamina9
+escenario,2	pieza,habitacion,cama,conejo,puerta,manilla,ventana,puerta,pasillo,cortina,casa,hogar,noche
+familia,2	papa,mama,mamita,papito,abuelito,abuelita,abuelo,abuela,tia,tio,primo,prima,hermano,hermana,hijo,hija
+temor,0	miedo,oscuridad,soledad,tenebroso,lugubre,solo
+visitar,1	visitar,cuidar,atender,defender,proteger,vigilar,velar,supervisar
+curiosidad,2	espiar,ver,mirar,merodear,investigacion,busqueda,buscar,experimento
+castigo,0	crimen,pena,sancion,penitencia,asesino,asesinar,matar,atropello,delito,homicidio,maldad,malo
