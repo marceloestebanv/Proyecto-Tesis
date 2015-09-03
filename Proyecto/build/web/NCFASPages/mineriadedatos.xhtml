@@ -57,10 +57,14 @@
         <div class="col-md-8" style="margin: 10px">
     <h1> Al realizar Minería de Datos se obtubierón los siguientes resultados: </h1>
     
-    <h:panelGrid >
-        
-        <h:outputLabel id="txtid" value="#{mineriaBean.obtenerNum()}" />
-    </h:panelGrid>
+    <ui:repeat var="item" varStatus="status" value="#{mineriaBean.obtenerNum()}">  
+	
+        <h:outputText value="#{item}"/> 
+        <br>
+        </br>     
+	
+</ui:repeat>
+    
 </div>  
            
                 

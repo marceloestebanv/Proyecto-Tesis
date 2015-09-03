@@ -6,6 +6,7 @@
 package Dao.NCFAS;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -160,11 +161,13 @@ public List<String> retornarReglas() throws DAOException, IOException, Exception
          
     fichero = new FileWriter(pathArchivos+"Resultado.txt",true); 
     pw = new PrintWriter(fichero);
+    BufferedWriter bw = new BufferedWriter(new FileWriter(pathArchivos+"Resultado.txt"));
     pw.println(model);
     
     //SE MUESTRA LOS RESULTADOS OBTENIDOS POR APRIORI
      System.out.println("LOS RESULTADOS DE APRIORI A DataSetSimulado.arff son:");
     System.out.println(model);
+    bw.write("");
     fichero.close();
     
     
