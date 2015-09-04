@@ -5,9 +5,9 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
 
-    <f:view contentType="text/html">
+    <f:view contentType="text/html" rendered="#{not empty testSession.tipoUsuario}">
         
-        <h:form rendered="#{not empty testSession.tipoUsuario}">
+      
         <h:head>
             <f:facet name="first">
                 <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
@@ -98,7 +98,9 @@
    
 </p:link>
                     
-                    
+              <p:galleria value="#{imagesView.images}" var="image" panelWidth="500" panelHeight="313" showCaption="true">
+    <p:graphicImage name="imagen/#{image}" alt="Image Description for #{image}" title="#{image}"/>
+</p:galleria>      
                     
                 </p:layoutUnit>
 
@@ -107,12 +109,19 @@
 
         </h:body>
              
-             </h:form> 
+         
         <h:form rendered="#{empty testSession.tipoUsuario}">
               
               <h1> ingresa sesion</h1>
               </h:form>
 
+        
+        
+           <h:form rendered="#{not empty testSession.tipoUsuario and ((testSession.tipoUsuario eq 'Psicologo')or (testSession.tipoUsuario eq 'Asistente'))}">
+        <h1> Página sólo de administración.No tienes permisos para esta página</h1>
+              </h:form>
+        
+       
     </f:view>
 </html>
 

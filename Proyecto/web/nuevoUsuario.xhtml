@@ -6,6 +6,8 @@
       xmlns:p="http://primefaces.org/ui">
 
     <f:view contentType="text/html">
+        
+        <h:form rendered="#{not empty testSession.tipoUsuario and testSession.tipoUsuario eq 'Administrador'}">
         <h:head>
             <f:facet name="first">
                 <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
@@ -143,7 +145,16 @@
            
 
         </h:body>
-
+             </h:form>
+        
+         <h:form rendered="#{not empty testSession.tipoUsuario and ((testSession.tipoUsuario eq 'Psicologo')or (testSession.tipoUsuario eq 'Asistente'))}">
+        <h1> Página sólo de administración.No tienes permisos para esta página</h1>
+              </h:form>
+        
+        <h:form rendered="#{empty testSession.tipoUsuario}">
+              
+              <h1> ingresa sesion</h1>
+              </h:form>
     </f:view>
 </html>
 

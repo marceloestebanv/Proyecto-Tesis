@@ -33,7 +33,7 @@
             
         </h:head>
 
-        <h:body>
+        <h:body rendered="#{not empty testSession.tipoUsuario and testSession.tipoUsuario eq 'Administrador'}">
 
             <p:layout fullPage="true">
 
@@ -271,6 +271,17 @@ paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink}
 
         </h:body>
 
+        
+         <h:form rendered="#{not empty testSession.tipoUsuario and ((testSession.tipoUsuario eq 'Psicologo')or (testSession.tipoUsuario eq 'Asistente'))}">
+        <h1> Página sólo de administración.No tienes permisos para esta página</h1>
+              </h:form>
+        
+        <h:form rendered="#{empty testSession.tipoUsuario}">
+              
+              <h1> ingresa sesion</h1>
+              </h:form>
+        
+        
     </f:view>
 </html>
 
