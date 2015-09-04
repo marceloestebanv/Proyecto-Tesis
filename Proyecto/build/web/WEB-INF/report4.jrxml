@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report4" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="53697801-0e54-4546-81c0-7a5b3cd78920">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     ncfas.`idncfas` AS ncfas_idncfas,
+     ncfas.`nombrefamilia` AS ncfas_nombrefamilia,
+     ncfas.`parteproceso` AS ncfas_parteproceso,
+     ncfas.`fecha` AS ncfas_fecha,
+     ncfas.`Usuario_rut` AS ncfas_Usuario_rut,
+     item.`valor` AS item_valor,
+     item.`dimension` AS item_dimension,
+     item.`iditem` AS item_iditem,
+     item.`ncfas_idncfas` AS item_ncfas_idncfas
+FROM
+     `ncfas` ncfas INNER JOIN `item` item ON ncfas.`idncfas` = item.`ncfas_idncfas`
+WHERE item.`dimension` = 1]]>
+	</queryString>
+	<field name="ncfas_idncfas" class="java.lang.Integer"/>
+	<field name="ncfas_nombrefamilia" class="java.lang.String"/>
+	<field name="ncfas_parteproceso" class="java.lang.Integer"/>
+	<field name="ncfas_fecha" class="java.sql.Date"/>
+	<field name="ncfas_Usuario_rut" class="java.lang.String"/>
+	<field name="item_valor" class="java.lang.Integer"/>
+	<field name="item_dimension" class="java.lang.Integer"/>
+	<field name="item_iditem" class="java.lang.Integer"/>
+	<field name="item_ncfas_idncfas" class="java.lang.Integer"/>
+	<group name="item_dimension">
+		<groupExpression><![CDATA[$F{item_dimension}]]></groupExpression>
+		<groupHeader>
+			<band height="36">
+				<staticText>
+					<reportElement uuid="e1ad9c40-34c3-43c3-a6d2-5783594ef931" x="0" y="5" width="228" height="30"/>
+					<textElement>
+						<font size="18"/>
+					</textElement>
+					<text><![CDATA[Dimensión Entorno]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="84a589a7-164b-4409-8bbb-f7fcefb1d5a4" x="229" y="6" width="154" height="30" forecolor="#006699" backcolor="#CCCCCC"/>
+					<textElement>
+						<font size="16" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{item_dimension}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement uuid="90352aae-67ce-459f-a0b9-d17d3b149d45" mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="b8bea5e0-4bf8-46df-a893-5c5f3e8cdc7b" x="20" y="58" width="277" height="20"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ncfas_parteproceso}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="f841a02f-5b13-4395-aeea-ceeda08f06b3" mode="Opaque" x="20" y="37" width="277" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ncfas_parteproceso]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="a6023b4f-acf8-437c-a415-13f4f2876aad" mode="Opaque" x="298" y="37" width="277" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ncfas_fecha]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="09670b42-2faf-4c65-8de2-821728aad8fd" x="298" y="58" width="179" height="20"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ncfas_fecha}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="3253b96e-6f9d-4d8c-9a3c-b49e54802ba3" mode="Opaque" x="20" y="0" width="100" height="32" forecolor="#666666" backcolor="#E6E6E6"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Nombre de la familia:]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="ae00a586-9ccc-4ecf-93a4-c3408df037ca" mode="Opaque" x="120" y="0" width="455" height="32" forecolor="#006699" backcolor="#E6E6E6"/>
+					<textElement>
+						<font size="24" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ncfas_nombrefamilia}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<detail>
+		<band height="34">
+			<staticText>
+				<reportElement uuid="21a7632b-7731-4348-ba34-beb8971ad901" x="0" y="0" width="100" height="20" forecolor="#666666"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Valor Item:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="2189fe7a-ca79-4f7b-aba4-86f15455bff0" x="101" y="-1" width="455" height="34" forecolor="#006699"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_valor}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="24">
+			<textField>
+				<reportElement uuid="ec9270d1-a01e-4c6c-b1f8-1294257cab01" mode="Opaque" x="0" y="11" width="515" height="13" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="7ce8a28d-0a14-4d97-8805-f12d919cd9d6" mode="Opaque" x="515" y="11" width="40" height="13" backcolor="#E6E6E6"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="84e011d8-b2b0-49c9-836c-b36225042791" x="0" y="11" width="100" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

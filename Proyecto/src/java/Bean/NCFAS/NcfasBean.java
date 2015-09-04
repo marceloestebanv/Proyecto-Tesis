@@ -5,8 +5,10 @@ import Model.NCFAS.Item;
 import java.util.List;
 import Model.NCFAS.Ncfas;
 import Model.NCFAS.Usuario;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -15,6 +17,14 @@ import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
 
 
@@ -248,6 +258,64 @@ public class NcfasBean {
             listaCompleta.add(ncfas);
         }
         return listaCompleta;
+    }
+     
+     public void exportarPDF() throws JRException, IOException, Exception{
+        
+     Integer[] valores1;
+     Integer[] valores2;
+     Integer[] valores3;
+     Integer[] valores4;
+     Integer[] valores5;
+     Integer[] valores6;
+     Integer[] valores7;
+     Integer[] valores8;
+            ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
+ String realPath=(String) servletContext.getRealPath("/")+"/resources/imagen/";
+
+        
+          ListarItemsBean beanItems;
+    beanItems= new ListarItemsBean();
+    
+    valores1=beanItems.getValores1();
+    valores2=beanItems.getValores2();
+    valores3=beanItems.getValores3();
+    valores4=beanItems.getValores4();
+    valores5=beanItems.getValores5();
+    valores6=beanItems.getValores6();
+    valores7=beanItems.getValores7();
+    valores8=beanItems.getValores8();
+    
+        //campo fijo (txtUsu.. valor del parmetro jasper, Mitocode... valor que le daremos desde java
+        
+    Map<String,Object> parametros= new HashMap<>();        
+    parametros.put("field1",valores1[1]);
+    parametros.put("field2",valores1[2]);
+    parametros.put("field3",valores1[3]);
+    parametros.put("field4",valores1[4]);
+    parametros.put("field5",valores1[5]);
+    parametros.put("field6",valores1[6]);
+    parametros.put("field7",valores1[7]);
+        
+   
+    System.out.println("el valor 1 es : " +valores1[1]);
+    
+   // parametros.put("nombreUs",testBean.getUsuario().getNombre());
+        
+        
+        
+        File jasper= new File(FacesContext.getCurrentInstance().getExternalContext().getRealPath("/resources/reporteNcfas.jasper"));
+        JasperPrint jasperPrint = JasperFillManager.fillReport(jasper.getPath(),parametros);
+       
+     HttpServletResponse response = (HttpServletResponse) FacesContext.getCurrentInstance().getExternalContext().getResponse();
+		response.addHeader("Content-disposition","attachment; filename=NCFAS-Resultados-"+".pdf");
+		ServletOutputStream stream = response.getOutputStream();
+		
+		JasperExportManager.exportReportToPdfStream(jasperPrint, stream);
+		
+		stream.flush();
+		stream.close();
+		FacesContext.getCurrentInstance().responseComplete();
     }
     
 }
