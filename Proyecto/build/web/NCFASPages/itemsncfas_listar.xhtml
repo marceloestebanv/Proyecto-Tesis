@@ -88,8 +88,8 @@
     <div class="col-md-7">
     <p:fieldset legend="Valores de por Dimensión" >             
              <h:form> 
-        <h3>Nombre Familia: VALENZUELA </h3> 
-        <h:outputText value="#{listarItemsBean.nombrefamilia}" />
+        
+                 <h:outputText value="#{listarItemsBean.nombrefamilia}" />
     
     <p:accordionPanel multiple="true">
         <p:tab title="ENTORNO">
@@ -421,7 +421,7 @@
             </p:tab>
     </p:accordionPanel>
         
-        <h:commandButton value=" Exportar Datos como PDF" action="#{ncfasBean.exportarPDF()}" />
+                 <h:commandButton value=" Exportar Datos como PDF" action="#{reportesBean.reporNcfasPDF()}" />
         </h:form>
         <br>  
         </br>
